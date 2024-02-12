@@ -1,0 +1,54 @@
+/* Add your custom styles here */
+body {
+	background-color: #f2f2f2;
+}
+
+.table-container {
+	background: hsla(0, 0%, 100%, 0.8);
+	box-shadow: 0 0 4rem rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.table-container table {
+	width: 100%;
+	margin-bottom: 0;
+	border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+	padding: 12px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table-container th,
+.table-container .actions {
+	white-space: nowrap; /* Prevent content from breaking into multiple lines */
+}
+
+.table-container thead {
+	background-color: #52a59e;
+	color: white;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.table-container tbody tr {
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table-container tbody tr:hover {
+	background-color: #e0f7fa;
+}
+
+.table-container a {
+	color: #fff;
+}
+
+.table-container img {
+	max-width: 50px;
+	max-height: 53px;
+	border-radius: 50%;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Section: Design Block -->
+    <section class="text-center">
+        <!-- Background image -->
+        <div class="p-5 bg-image"
+            style="background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg'); height: 200px;">
+        </div>
+
+        <div class="card mx-4 mx-md-auto shadow-5-strong"
+            style="max-width: 50rem; margin-top: -110px; background: hsla(0, 0%, 100%, 0.8); 
+            	backdrop-filter: blur(38px); box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);">
+            <div class="card-body py-4 px-md-3">
+
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-5">Add New Employee</h2>
+                        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST"
+                            enctype="multipart/form-data">
+
+                            <!-- Add hidden form field to handle update -->
+                            <input type="hidden" th:field="*{id}">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" th:field="*{firstName}" class="form-control"
+                                            placeholder="Employee First Name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" th:field="*{lastName}" class="form-control"
+                                            placeholder="Employee Last Name" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="row">
+	                            <div class="col-md-6 mb-4">
+	                                <input type="email" th:field="*{email}" class="form-control"
+	                                    placeholder="Employee Email" required>
+	                            </div>
+	
+	                            <!-- Department input -->
+	                            <div class="col-md-6 mb-4">
+	                                 <select th:field="*{department}" class="form-control" required>
+										<option value="" selected>Select Department</option>
+							            <option value="Software Development">Software Development</option>
+										<option value="Cyber Security">Cyber Security</option>
+										<option value="Human Resources">Human Resources</option>
+										<option value="Digital Marketing">Digital Marketing</option>
+							        </select>
+	                            </div>
+                            </div>
+
+                            <!-- Position input -->
+                            <div class="row">
+	                            <div class="col-md-6 mb-4">
+	                                <select th:field="*{position}" class="form-control" required>
+							            <option value="" selected>Select Position</option>
+							            <option value="Data Scientist">Data Scientist</option>
+										<option value="Java Backend Developer">Java Backend Developer</option>
+										<option value="SDE Trainee"> SDE Trainee </option>
+										<option value="Digital Marketing Manager">Digital Marketing Manager</option>
+										<option value="Security Consultant">Security Consultant</option>
+										<option value="HR Specialist">HR Specialist</option>
+							        </select>
+	                            </div>
+	
+	                            <!-- Salary input -->
+	                            <div class="col-md-6 mb-4">
+	                                <input type="text" th:field="*{salary}" class="form-control"
+	                                    placeholder="Employee Salary" required>
+	                            </div>
+                            </div>
+
+                            <!-- Profile Picture --> 
+								<div class="row">
+									<div class="col-md-6 mb-4">
+										<label for="formFile" class="form-label border px-5 py-1">Profile Photo</label>
+									</div>
+	                                <div class="col-md-6 mb-4">
+	                                    <input type="file" name="img" class="form-control-file" required>
+	                                </div>
+                                </div> 
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-block mb-4">
+                                    Save
+                                </button>
+                            </div>
+							
+						   <div class="container">
+						        <a th:href="@{/}" class="btn btn-outline-primary"><i class="fa fa-circle-arrow-left" aria-hidden="true"></i> Back to Employee List</a>
+						    </div>
+
+							
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
